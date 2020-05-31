@@ -32,40 +32,11 @@ volume master {
         mixer_idx = 0
         # termsyn font
         format = "🔊 %volume "
+        format_muted = "🔇(%volume)"
+
 }
 wireless _first_ {
         format_up = "Wifi: (%quality at %essid) %ip"
         format_down = "Wifi: down"
 }
-#you can enter/change anything inside the empty string("") in 'format_down'
-# i set it empty so that it will only show up when connected :)
-ethernet _first_ {
-        # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip (%speed)"
-        format_down = ""
-}
-
-battery all {
-        format = "%status %percentage %remaining"
-}
-
-tztime local {
-#you should enter your name/companyname inside the ** if you dont want to,you should backspace it. And keep the time and date format inside the string.
-         format = "%Y-%m-%d  %H:%M:%S *enter your name or company"
-}
-
-disk "/" {
-        format = "Space: %avail"
-}
-cpu_usage {
-  format = "%usage"
-}
-#you can add more cpu. if you wish
-#you should make sure your directory to cpu temp is right.
-cpu_temperature 1 {
-        format = "%degrees°C"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
-        max_threshold = 95
-}
-load {
-  format = "%1min"
+#you can 
