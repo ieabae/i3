@@ -60,13 +60,12 @@ disk "/" {
 cpu_usage {
   format = "%usage"
 }
-#you can add more cpu temp if you wish
+#you can add more cpu. if you wish
 #you should make sure your directory to cpu temp is right.
 cpu_temperature 1 {
         format = "%degrees°C"
         path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
         max_threshold = 95
 }
-cpu_usage {
-        format = "%usage "
-}
+load {
+  format = "%1min"
