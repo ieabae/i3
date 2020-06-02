@@ -6,9 +6,6 @@
 # ß
 # If the above line is not correctly displayed, fix your editor first!
 
-###################################################
-#PLEASE EDIT THE DIRECTORY ACCORDING TO YOUR FILES#
-###################################################
 general {
         colors = true
 # i recommend you change the colorcode below and coustomize it with your preferences
@@ -29,8 +26,8 @@ order += "battery all"
 order += "tztime local"
 order += "volume master"
 wireless _first_ {
-        format_up = "Wifi: (%quality at %essid) %ip"
-        format_down = "Wifi: down"
+        format_up = "📶 WIFI:%quality at %essid %ip"
+        format_down = "WIFI:❌"
 }
 #you can enter/change anything inside the empty string("") in 'format_down'
 # i set it empty so that it will only show up when connected :)
@@ -43,21 +40,20 @@ ethernet _first_ {
 battery all {
         format = "%status %percentage %remaining"
         format_down = "No battery"
-                   status_full ="🔋 FULL"
-                   status_bat = "🔋 BAT"
-                   status_unk = "? UNK"
+                   status_full ="⚡FULL"
+                   status_bat = "🔋BAT"
+                   status_unk = "Reading Charge"
                    path = "/sys/class/power_supply/BAT%d/uevent"
-                   low_threshold = 10
-
+                   low_threshold = 20
 }
 
 tztime local {
 #you should enter your name/companyname inside the ** if you dont want to,you should backspace it. And keep the time and date format inside the string.
-         format = "%d-%m-%Y  %I:%M:%S %p Abhay krishna"
+         format = "📅%d-%m-%Y ⌚%I:%M:%S %p 𝒂𝒃𝒉𝒂𝒚 𝒌𝒓𝒊𝒔𝒉𝒏𝒂"
 }
 
 disk "/" {
-        format = "Space: %avail"
+        format = "💾%avail"
 }
 cpu_usage {
   format = "%usage"
@@ -65,8 +61,8 @@ cpu_usage {
 #you can add more cpu. if you wish
 #you should make sure your directory to cpu temp is right.
 cpu_temperature 1 {
-        format = "%degrees°C"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+        format ="🌡️ %degrees°C"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
         max_threshold = 65
 }
 load {
@@ -79,12 +75,5 @@ volume master {
         mixer_idx = 0
         # termsyn font
         format = "🔊 %volume "
-        format_muted = "🔊 Muted(%volume)"
+        format_muted = "🔈Muted(%volume)"
 }
-
-
-~                                                                                                                                                                                                                            
-~                                                                                                                                                                                                                            
-~                                                                                                                                                                                                                            
-~                                                                                                                                                                                                                            
-~                                                                                                
