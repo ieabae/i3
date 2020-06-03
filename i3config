@@ -91,16 +91,16 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-set $ws1 "1-🌍Chrome"
-set $ws2 "2-💬Chat"
-set $ws3 "3-🎵Spotify"
-set $ws4 "4-📚Study"
-set $ws5 "5-🖥️ Vstudio"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "𝟭-🌍𝘾𝙝𝙧𝙤𝙢𝙚"
+set $ws2 "𝟮-💬𝘾𝙝𝙖𝙩"
+set $ws3 "𝟯-🎵𝙎𝙥𝙤𝙩𝙞𝙛𝙮"
+set $ws4 "𝟰-📚𝙎𝙩𝙪𝙙𝙮"
+set $ws5 "𝟱-🖥️ 𝙑𝙎𝙘𝙤𝙙𝙚"
+set $ws6 "𝟲"
+set $ws7 "𝟳"
+set $ws8 "𝟴"
+set $ws9 "𝟵"
+set $ws10 "𝟭𝟬"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -114,6 +114,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+                                                                                                                                                                                                           1,1           Top
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -142,7 +143,7 @@ mode "resize" {
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 14 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
@@ -173,14 +174,15 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 #for bar
 set $bg-color1            #000000
-set $ab-border            #FFFFFF
+set $ab-border            #000000
 set $ab-bg                #004d4d
 set $ab-text              #FFFFFF       
 bar {
+        position bottom
         status_command i3status
-        colors {
+         colors {
                 background $bg-color1
-                separator #000000
+                separator #384747
             #          border             background         text          
 focused_workspace      $ab-border         $ab-bg         $ab-text
 }
@@ -213,3 +215,9 @@ assign [class= "Spotify"] $ws3
 
 #floating
 for_window [class="Spotify"]move to workspace $ws3
+
+#shortcut for APPLICATIONS
+bindsym ctrl+n exec nautilus
+bindsym ctrl+c exec google-chrome
+bindsym ctrl+s exec spotify
+                                                                                                                                                                                                           221,27        Bot
