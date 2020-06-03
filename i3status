@@ -8,6 +8,7 @@
 
 general {
         colors = true
+
 # i recommend you change the colorcode below and coustomize it with your preferences
         color_good = "#BBBBBB"
         color_bad = "#CC1616"
@@ -16,6 +17,7 @@ general {
 
 
 }
+
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "disk /"
@@ -26,54 +28,10 @@ order += "battery all"
 order += "tztime local"
 order += "volume master"
 wireless _first_ {
-        format_up = "📶 WIFI:%quality at %essid %ip"
-        format_down = "WIFI:❌"
+        format_up = "📶 𝙒𝙄𝙁𝙄:%quality at %essid %ip"
+        format_down = "𝙒𝙄𝙁𝙄:❌"
 }
 #you can enter/change anything inside the empty string("") in 'format_down'
 # i set it empty so that it will only show up when connected :)
 ethernet _first_ {
-        # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip (%speed)"
-        format_down = ""
-}
-
-battery all {
-        format = "%status %percentage %remaining"
-        format_down = "No battery"
-                   status_full ="⚡FULL"
-                   status_bat = "🔋BAT"
-                   status_unk = "Reading Charge"
-                   path = "/sys/class/power_supply/BAT%d/uevent"
-                   low_threshold = 20
-}
-
-tztime local {
-#you should enter your name/companyname inside the ** if you dont want to,you should backspace it. And keep the time and date format inside the string.
-         format = "📅%d-%m-%Y ⌚%I:%M:%S %p 𝒂𝒃𝒉𝒂𝒚 𝒌𝒓𝒊𝒔𝒉𝒏𝒂"
-}
-
-disk "/" {
-        format = "💾%avail"
-}
-cpu_usage {
-  format = "%usage"
-}
-#you can add more cpu. if you wish
-#you should make sure your directory to cpu temp is right.
-cpu_temperature 1 {
-        format ="🌡️ %degrees°C"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
-        max_threshold = 65
-}
-load {
-  format = "%1min"
-}
-volume master {
-#       format = " 'insert icon or text' %volume  " 
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
-        # termsyn font
-        format = "🔊 %volume "
-        format_muted = "🔈Muted(%volume)"
-}
+".config/i3status/config" 81L, 2385C                   1,8           Top
